@@ -18,6 +18,9 @@ $router->options('/{any:.*}', function() {
 | and give it the Closure to call when that URI is requested.
 |
 */
+$router->post('/admin/login', 'AdminController@login');
+
+$router->group(['prefix' => 'admin'], function () use ($router) {
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
@@ -26,14 +29,17 @@ $router->get('/', function () use ($router) {
 $router->get('volunteers', ['uses' => 'VolunteerController@getAllVolunteers']);
 $router->get('volunteers/{id}', ['uses' => 'VolunteerController@getOneVolunteer']);
 
-$router->post('volunteers', ['uses' => 'VolunteerController@createVolunteer']);
-
 $router->put('volunteers/{id}', ['uses' => 'VolunteerController@updateVolunteers']);
 
 $router->delete('volunteers/{id}', ['uses' => 'VolunteerController@deleteVolunteers']);
+});
 
+//create function is for public. So it doesnt have a admin prefix
+
+$router->post('volunteers', ['uses' => 'VolunteerController@createVolunteer']);
 // $router->get('/test-database-connection', function () use ($router) {
 //     $results = DB::table('users')->get();
 //     return response()->json($results);
 // });
+
 

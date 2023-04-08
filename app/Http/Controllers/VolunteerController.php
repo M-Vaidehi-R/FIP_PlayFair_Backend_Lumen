@@ -15,7 +15,11 @@ class VolunteerController extends Controller
     {
         //return response()->json(Volunteer::join('status', 'status_id', '=', 'status.id')->select('volunteers.name','contact','status.name')->get());
         //echo "displayed all volunteers";
-        return response()->json(Volunteer::join('status', 'status_id', '=', 'status.id')->select('first_name', 'last_name', 'contact', 'status.name as status_name')->get());
+        //return response()->json(Volunteer::join('status', 'status_id', '=', 'status.id')->select('fname', 'lname', 'email', 'phone','status.name as status_name')->get());
+        //view('volunteers');
+        $volunteers = Volunteer::join('status', 'status_id', '=', 'status.id')->select('volunteers.id','fname', 'lname', 'email', 'phone','status.name as status_name')->get();
+
+        return view('admin.volunteers', ['volunteers' => $volunteers]);
     }
 
     public function getOneVolunteer($id)
@@ -23,32 +27,27 @@ class VolunteerController extends Controller
         return response()->json(Volunteer::find($id));
     }
 
-    // Why does it have to be 200 specifically?
-    // Wht does it have to 201? Because the list exists from 0 to 200?
 
-    // required|[the value] means "type [the value]"
     public function createVolunteer(Request $request)
-    {
-        echo "create";
-        $this->validate($request, [
-            'fname' => 'required',
-            'lname' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required|integer'
-        ]);
+{
+    $this->validate($request, [
+        'fname' => 'required',
+        'lname' => 'required',
+        'email' => 'required|email',
+        'phone' => ['required', 'regex:/^[0-9]{10}$/']
+    ]);
+    
 
-        // request grabbing all the volunteersgetAllvolunteers
-        // the skinny arrow (->) means access
-        // $volunteer = Volunteer::create($request->all());
-        $volunteer = Volunteer::create([
-            'fname' => $request->input('fname'),
-            'lname' => $request->input('lname'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone')
-        ]);
-        return response()->json($volunteer, 201);
-        // returning the object back again. When the new database is created, it starts from 201.
-    }
+    Volunteer::create([
+        'fname' => $request->input('fname'),
+        'lname' => $request->input('lname'),
+        'email' => $request->input('email'),
+        'phone' => $request->input('phone')
+    ]);
+
+    return response()->json(['message' => 'Volunteer created successfully'], 201);
+}
+
 
     public function updateVolunteer(Request $request)
     {
@@ -61,8 +60,28 @@ class VolunteerController extends Controller
 
     public function deleteVolunteer($id)
     {
-        echo "dalete";
+        echo "delete";
         $volunteer = Volunteer::findOrFail($id)->delete();
         return response()->json('deleted!', 200);
     }
 }
+
+// class AdminController extends Controller
+// {
+//     public function login(Request $request)
+//     {
+//         $email = $request->input('email');
+//         $user = Volunteer::where('email', $email)->first();
+    
+//         if ($user && $user->status_id == 1) {
+//             // User is an admin
+//             // return view for the admin dashboard
+//             echo "admin";
+//         } else {
+//             // User is not an admin
+//             // return view for the user dashboard
+//             echo "user";
+//         }
+//     }
+    
+// }
