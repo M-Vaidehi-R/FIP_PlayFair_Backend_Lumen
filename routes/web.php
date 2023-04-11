@@ -27,19 +27,21 @@ $router->get('/', function () use ($router) {
 });
 
 $router->get('volunteers', ['uses' => 'VolunteerController@getAllVolunteers']);
+
+$router->post('/volunteers/create', ['uses' => 'VolunteerController@createAdminVolunteer']);
+$router->post('/volunteers/createUser', ['uses' => 'VolunteerController@createAdminVolunteerPage']);
+
+$router->get('/volunteers/{id}/edit', 'VolunteerController@editVolunteer');
+
+$router->put('volunteers/{id}', ['uses' => 'VolunteerController@updateVolunteer']);
+
 $router->get('volunteers/{id}', ['uses' => 'VolunteerController@getOneVolunteer']);
 
-$router->put('volunteers/{id}', ['uses' => 'VolunteerController@updateVolunteers']);
 
-$router->delete('volunteers/{id}', ['uses' => 'VolunteerController@deleteVolunteers']);
+$router->delete('volunteers/{id}', ['uses' => 'VolunteerController@deleteVolunteer']);
 });
 
-//create function is for public. So it doesnt have a admin prefix
-
 $router->post('volunteers', ['uses' => 'VolunteerController@createVolunteer']);
-// $router->get('/test-database-connection', function () use ($router) {
-//     $results = DB::table('users')->get();
-//     return response()->json($results);
-// });
 
 
+$router->post('newsletter/create', ['uses' => 'NewsletterController@create']);

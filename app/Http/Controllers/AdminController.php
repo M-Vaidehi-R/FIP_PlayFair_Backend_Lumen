@@ -13,7 +13,7 @@ class AdminController extends Controller
         $email = $request->input('email');
         $user = Volunteer::where('email', $email)->first();
     
-        if ($user && $user->status_id == 1) {
+        if ($user && $user->status_id == 2) {
             // User is an admin
             // return view for the admin dashboard
             return view('volunteerpage');
