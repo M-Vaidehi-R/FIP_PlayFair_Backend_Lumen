@@ -55,6 +55,8 @@ $app->singleton(
 
 $app->register(Fruitcake\Cors\CorsServiceProvider::class);
 $app->register(Illuminate\Session\SessionServiceProvider::class);
+//$app->register(Illuminate\Http\RequestServiceProvider::class);
+//$app->register(\Illuminate\Http\RequestServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -94,6 +96,21 @@ $app->middleware([
 $app->middleware([
     Illuminate\Session\Middleware\StartSession::class,
 ]);
+
+$app->router->group(['middleware' => 'cors'], function ($router) {
+    $router->delete('/', function () {
+        return 'Delete method is working fine.';
+    });
+    $router->put('/', function () {
+        return 'Put method is working fine.';
+    });
+});
+
+
+// $app->middleware([
+//     Illuminate\Http\Middleware\AcceptHeader::class,
+// ]);
+
 
 
 /*
