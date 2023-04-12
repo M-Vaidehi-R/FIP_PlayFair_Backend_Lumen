@@ -1,0 +1,72 @@
+.volunteer-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex_row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.volunteer_title{
+    color: $green;
+    font-size: 6rem;
+    //font-family:"novecento-sans-wide", sans-serif;
+    font-weight:700;
+}
+
+.mascot_volunteer img{
+   min-width: 10%;
+   max-width: 70%;
+   height: auto;
+   margin-top:3rem;
+}
+
+.my-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 5rem auto;
+  }
+
+  .my-table td,
+  .my-table th {
+    padding: 8px;
+    border: 1px solid $yellow;
+    text-align: left;
+    font-size: 1.5rem;
+    color: $green;
+    text-align: center;
+  }
+
+  .volunteer-list-button{
+    background-color: $pink;
+    border: none;
+    color: white;
+    padding: .25rem .25rem;
+    text-decoration: none;
+
+    a{
+        background-color: $pink;
+        border: none;
+        color: white;
+        padding: .25rem .75rem;
+        text-decoration: none;
+    }
+  }
+  
+  /* CSS styles for table header cells */
+  .my-table th {
+    background-color: $yellow;
+    font-weight: bold;
+  }
+  
+  /* CSS styles for table rows */
+  .my-table tr:nth-child(even) {
+    background-color: $light-white;
+  }

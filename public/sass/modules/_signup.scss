@@ -1,0 +1,13 @@
+.sign_up{
+    margin: 5rem 2rem;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    h2{
+        text-align: center;
+        color: $green;
+        font-size: 3rem;
+        font-weight: 500;
+    }
+}
