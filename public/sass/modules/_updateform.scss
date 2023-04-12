@@ -51,4 +51,56 @@
     float: right;
     position: relative;
     right: 5rem;
+    display: block;
+}
+
+@media screen and (max-width: 450px){
+
+    .mascot_tennis img {
+        // min-width: 10%;
+        // max-width: 45%;
+        // float: left;
+        // position: relative;
+        // right: 5rem;
+        display: none;
+    }  
+
+    .update_form {
+        width: 20rem;
+        background-color: $yellow;
+        text-align: center;
+        margin: auto;
+        padding: 6rem 2rem;
+        position: relative;
+        left: 10rem;
+        text-align: center;
+    
+        div {
+            display: flex;
+            flex-direction: column;
+            row-gap: .25rem;
+            color: $green;
+            font-weight: bold;
+    
+            input {
+                height: 2rem;
+                text-align: center;
+                color: $green;
+                font-size: 1rem;
+                border: none;
+            }
+        }
+    
+        button {
+            position: relative;
+            bottom: 0;
+            background-color: $green;
+            padding: 1rem 5rem;
+            width: 20rem;
+            color: white;
+            font-size: medium;
+            border: none;
+        }
+    }
+
 }

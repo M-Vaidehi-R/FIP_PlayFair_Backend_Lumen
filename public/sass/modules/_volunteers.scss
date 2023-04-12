@@ -70,3 +70,30 @@
   .my-table tr:nth-child(even) {
     background-color: $light-white;
   }
+
+
+  @media screen and (max-width: 450px){
+
+    .volunteer_title{
+      color: $green;
+      font-size: 2rem;
+      font-weight:500;
+  }
+
+  .my-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 500px;
+    margin: 5rem auto;
+  }
+
+  .my-table td,
+  .my-table th {
+    padding: 8px;
+    border: 1px solid $yellow;
+    text-align: left;
+    font-size: 1rem;
+    color: $green;
+    text-align: center;
+  }
+  }
