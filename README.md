@@ -7,7 +7,6 @@ Welcome to the backend repository for our Final Integrated Project! This program
 
 ## About PlayFair:
 
-
 Thank you for visiting the Play Fair campaign website, where we are dedicated to promoting equality and inclusivity in sports. Our mission is to create a safe and supportive environment for all athletes, regardless of their gender, sexual orientation, or identity.
 
 We firmly believe that every athlete deserves the opportunity to compete and succeed on a level playing field, free from discrimination or bias. By embracing diversity and celebrating the unique talents and perspectives of all individuals, we can create a better world for everyone. Join us in our mission to make sports a place where everyone can play fair and succeed together.
@@ -20,6 +19,7 @@ We firmly believe that every athlete deserves the opportunity to compete and suc
 
 As a group of passionate individuals, we are dedicated to fighting against the bullying and discrimination that the LGBTQ+ community faces in sports. We believe that everyone has the right to pursue their dreams and compete at the highest level, without fear of harassment or prejudice. Through our activism and advocacy, we are committed to creating a more inclusive and welcoming environment for all athletes, regardless of their sexual orientation or gender identity. Join us in our fight for equality and together we can create a brighter future for everyone in the sports community.
 
+![fip_playfair](https://user-images.githubusercontent.com/90973094/231346253-93e1911b-87ee-4f7b-bc12-f009e10afd37.jpg)
 
 ## Meet the Team
 
