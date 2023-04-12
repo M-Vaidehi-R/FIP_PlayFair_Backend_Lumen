@@ -56,5 +56,15 @@
     margin-right: 0px;
   }
   
+  @media screen and (max-width: 450px){
+    #navbar__logo {
+      width: 200px;
+    }
+
+    #navbar__social img {
+      width: 25px;
+      height: 25px;
+    }
+  }
   
   
