@@ -1,0 +1,27 @@
+.admin_page{
+   min-height: 60vh;
+
+   a{
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    color: $navy;
+    text-decoration: none;
+    font-size: 3rem;
+   }
+
+   a:hover{
+    color: $yellow;
+   }
+}
+
+.welcome_admin{
+    h2{
+        color: $pink;
+        font-size: 6rem;
+        text-align: center;
+        font-weight: 500;
+        margin-top: 4rem;
+    }
+}

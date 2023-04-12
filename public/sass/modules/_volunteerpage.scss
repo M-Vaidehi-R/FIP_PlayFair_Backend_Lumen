@@ -1,0 +1,39 @@
+.volunteerpage{
+
+    margin: 5rem 5rem;
+    p{
+        text-align: center;
+        color: $dark-gray;
+        font-size: large;
+    }
+}
+
+.highlight{
+    font-size: larger;
+    font-weight: bold;
+    color: $pink;
+
+}
+
+.tagline h2{
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: oblique;
+    color: $pink;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.volunteer_page_logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4rem;
+
+ img{
+    min-width: 20%;
+    max-width: 30%;
+    height: auto;
+    margin-top: 6rem;
+}}
